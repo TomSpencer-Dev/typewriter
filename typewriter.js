@@ -1,18 +1,15 @@
 const typewriter = function(str) {
-  console.log(str.length);
   let delay = 0;
 
-  for (let i = 0; i <= str.length; i++) {
-    let char = str[i];
+  for (const char of str) {
     setTimeout(() => {
-      if (i < str.length) {
-        process.stdout.write(char);
-      } else {
-        console.log("\n");
-      }
+      process.stdout.write(char);
     }, delay);
     delay += 50;
   }
+  setTimeout(() => {
+    console.log("\n");
+  }, delay);
 };
 const sentence = "hello there from lighthouse labs:";
 
